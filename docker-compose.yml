@@ -1,13 +1,13 @@
 version: '3'
 services: 
   backend: 
-    container_name: 'Python Server'
+    container_name: 'python'
     build:
       dockerfile: '.docker/Dockerfile'
     volumes: 
       - ./:/app
   oracle: 
-    container_name: 'Oracle 6 Server'
+    container_name: 'oracle'
     image: oraclelinux:6  # Base image for Oracle Linux 6
     volumes:
       - ./oracle-data:/opt/oracle  # Optional: Mount a volume for Oracle data
