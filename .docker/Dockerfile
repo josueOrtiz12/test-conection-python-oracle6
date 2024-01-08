@@ -1,7 +1,17 @@
+# Use an official Python runtime as a parent image
 FROM python:3.10
 
-RUN apt install python3-pip
+# Set the working directory to /app
+WORKDIR /app
 
+# Copy the current directory contents into the container at /app
 COPY . /app
 
-ENTRYPOINT python app/src/app.py
+# Install dependencies from requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Make port 80 available to the world outside this container (optional)
+# EXPOSE 80
+
+# Run script.py when the container launches
+CMD ["python", "script.py"]
