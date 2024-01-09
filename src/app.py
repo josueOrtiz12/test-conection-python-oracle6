@@ -1,6 +1,7 @@
 import cx_Oracle
 
-connection = cx_Oracle.connect("user", "password", "localhost:1521/sid")
+connection = cx_Oracle.connect(user="", password="",
+                               dsn="")
 
 cursor = connection.cursor()
 
